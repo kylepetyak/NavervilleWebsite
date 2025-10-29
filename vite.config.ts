@@ -4,7 +4,12 @@
   import path from 'path';
 
   export default defineConfig({
-    plugins: [react()],
+    plugins: [
+      react({
+        // Enable Fast Refresh for better DX
+        fastRefresh: true,
+      })
+    ],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
@@ -53,10 +58,58 @@
     },
     build: {
       target: 'esnext',
-      outDir: 'build',
+      outDir: 'dist',
+      // Enable minification for production
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true, // Remove console.logs in production
+          drop_debugger: true,
+        },
+      },
+      // Optimize chunk splitting
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // Split vendor code for better caching
+            'react-vendor': ['react', 'react-dom'],
+            'ui-vendor': [
+              '@radix-ui/react-accordion',
+              '@radix-ui/react-alert-dialog',
+              '@radix-ui/react-dialog',
+              '@radix-ui/react-dropdown-menu',
+            ],
+            'icons': ['lucide-react'],
+          },
+          // Better asset naming for caching
+          chunkFileNames: 'assets/js/[name]-[hash].js',
+          entryFileNames: 'assets/js/[name]-[hash].js',
+          assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
+        },
+      },
+      // Increase chunk size warning limit
+      chunkSizeWarningLimit: 1000,
+      // Enable source maps for production debugging (optional)
+      sourcemap: false,
+      // Enable CSS code splitting
+      cssCodeSplit: true,
     },
     server: {
       port: 3000,
       open: true,
+      // Enable CORS for local development
+      cors: true,
+    },
+    // Optimize dependencies
+    optimizeDeps: {
+      include: [
+        'react',
+        'react-dom',
+        'lucide-react',
+      ],
+    },
+    // Enable JSON import
+    json: {
+      stringify: true,
     },
   });
