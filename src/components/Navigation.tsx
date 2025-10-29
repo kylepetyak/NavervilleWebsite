@@ -3,8 +3,7 @@ import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "./ui/sheet";
 import { SearchComponent } from "./SearchComponent";
 import { BreadcrumbNav, generateBreadcrumbs } from "./BreadcrumbNav";
-import logoImage from 'figma:asset/58ea7108aa384cc83baadb0fd98691daf4a8c4e4.png';
-import { Phone, Menu, X, Search } from "lucide-react";
+import { Phone, Menu, X, Search, MapPin } from "lucide-react";
 
 interface NavigationProps {
   onNavigateToHome: () => void;
@@ -75,99 +74,124 @@ export function Navigation({
 
   return (
     <>
-      <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+      <nav className="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex items-center">
-              <button 
+              <button
                 onClick={onNavigateToHome}
-                className="flex items-center hover:opacity-80 transition-opacity"
+                className="flex items-center hover:opacity-90 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg p-1"
+                aria-label="Go to homepage"
               >
-                <img 
-                  src={logoImage} 
-                  alt="Camelback Medical Centers - The Pain Relief Clinic" 
-                  className="h-12 w-auto"
+                <img
+                  src="/logo.svg"
+                  alt="Camelback Medical Centers - The Pain Relief Clinic"
+                  className="h-14 w-auto"
+                  onError={(e) => {
+                    // Fallback to PNG if SVG doesn't exist
+                    const img = e.target as HTMLImageElement;
+                    if (img.src.endsWith('.svg')) {
+                      img.src = '/logo.png';
+                    }
+                  }}
                 />
               </button>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-6">
-              <button 
+            <div className="hidden lg:flex items-center space-x-1">
+              <button
                 onClick={onNavigateToHome}
-                className={`transition-colors text-sm ${
-                  currentPage === 'home' 
-                    ? 'text-blue-600 font-medium' 
-                    : 'text-gray-700 hover:text-blue-600'
+                className={`transition-all px-3 py-2 rounded-md text-sm font-medium ${
+                  currentPage === 'home'
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
                 Home
               </button>
-              <button 
+              <button
                 onClick={onNavigateToAbout || (() => handleSectionNavigation('about'))}
-                className={`transition-colors text-sm ${
-                  currentPage === 'about' 
-                    ? 'text-blue-600 font-medium' 
-                    : 'text-gray-700 hover:text-blue-600'
+                className={`transition-all px-3 py-2 rounded-md text-sm font-medium ${
+                  currentPage === 'about'
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
                 About Us
               </button>
-              <button 
+              <button
                 onClick={onNavigateToWhoWeServe}
-                className={`transition-colors text-sm ${
-                  currentPage === 'who-we-serve' 
-                    ? 'text-blue-600 font-medium' 
-                    : 'text-gray-700 hover:text-blue-600'
+                className={`transition-all px-3 py-2 rounded-md text-sm font-medium ${
+                  currentPage === 'who-we-serve'
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
                 Who We Serve
               </button>
-              <button 
+              <button
                 onClick={onNavigateToConditions}
-                className={`transition-colors text-sm ${
-                  currentPage === 'conditions' 
-                    ? 'text-blue-600 font-medium' 
-                    : 'text-gray-700 hover:text-blue-600'
+                className={`transition-all px-3 py-2 rounded-md text-sm font-medium ${
+                  currentPage === 'conditions'
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
-                Conditions We Treat
+                Conditions
               </button>
-              <button 
+              <button
                 onClick={onNavigateToBlog}
-                className={`transition-colors text-sm ${
-                  currentPage === 'blog' || currentPage === 'blog-post' 
-                    ? 'text-blue-600 font-medium' 
-                    : 'text-gray-700 hover:text-blue-600'
+                className={`transition-all px-3 py-2 rounded-md text-sm font-medium ${
+                  currentPage === 'blog' || currentPage === 'blog-post'
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
-                Health Blog
+                Blog
               </button>
-              <button 
+              <button
                 onClick={() => handleSectionNavigation('team')}
-                className="text-gray-700 hover:text-blue-600 transition-colors text-sm"
+                className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-all px-3 py-2 rounded-md text-sm font-medium"
               >
                 Our Team
               </button>
-              <button 
+              <button
                 onClick={() => {
                   if (onNavigateToBooking) {
                     onNavigateToBooking();
                   }
                 }}
-                className={`transition-colors text-sm ${
-                  currentPage === 'booking' 
-                    ? 'text-blue-600 font-medium' 
-                    : 'text-gray-700 hover:text-blue-600'
+                className={`transition-all px-3 py-2 rounded-md text-sm font-medium ${
+                  currentPage === 'booking'
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
-                Contact & Booking
+                Contact
               </button>
             </div>
 
             {/* Search and Actions */}
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-3">
+              {/* Phone Number */}
+              <div className="hidden xl:flex items-center space-x-2 text-gray-700 mr-2">
+                <Phone className="h-4 w-4 text-blue-600" />
+                <a
+                  href="tel:6304161151"
+                  className="text-sm font-medium hover:text-blue-600 transition-colors"
+                >
+                  (630) 416-1151
+                </a>
+              </div>
+
+              {/* Location Badge */}
+              <div className="hidden xl:flex items-center space-x-1 px-2 py-1 bg-gray-50 rounded-md mr-2">
+                <MapPin className="h-3 w-3 text-blue-600" />
+                <span className="text-xs font-medium text-gray-600">Naperville, IL</span>
+              </div>
+
               {/* Search */}
               <div className="relative">
                 {showSearch ? (
@@ -201,7 +225,7 @@ export function Navigation({
               {/* Developer Links */}
               {onNavigateToPagesOverview && (
                 <div className="flex items-center space-x-2">
-                  <button 
+                  <button
                     onClick={onNavigateToPagesOverview}
                     className="text-xs text-gray-400 hover:text-blue-400 transition-colors opacity-60"
                     title="View All Pages"
@@ -212,9 +236,9 @@ export function Navigation({
               )}
 
               {/* Book Appointment Button */}
-              <Button 
+              <Button
                 onClick={onNavigateToBooking}
-                className="bg-blue-600 hover:bg-blue-700 text-sm"
+                className="bg-blue-600 hover:bg-blue-700 text-sm font-medium shadow-sm hover:shadow-md transition-all"
               >
                 Book Appointment
               </Button>
