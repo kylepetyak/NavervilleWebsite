@@ -1,0 +1,122 @@
+{
+  "businessRating": {
+    "averageRating": 4.9,
+    "totalReviews": 150,
+    "ratingBreakdown": {
+      "5": 142,
+      "4": 6,
+      "3": 1,
+      "2": 0,
+      "1": 1
+    }
+  },
+  "featuredReviews": [
+    {
+      "id": 1,
+      "author": "Sarah M.",
+      "rating": 5,
+      "date": "2 weeks ago",
+      "text": "Dr. James is absolutely amazing! After years of chronic back pain from a car accident, I was skeptical that anything would help. But after just 3 visits, I'm already feeling 80% better. The entire team is professional, caring, and really takes time to explain everything. Best chiropractor in Naperville!",
+      "source": "Google",
+      "verified": true,
+      "helpful": 15
+    },
+    {
+      "id": 2,
+      "author": "John D.",
+      "rating": 5,
+      "date": "1 month ago",
+      "text": "I can finally play with my grandkids pain-free! The team here truly cares about getting to the root of the problem, not just treating symptoms. The $29 new patient special was an incredible value - comprehensive exam and X-rays. Highly recommend to anyone in Naperville dealing with back or neck pain.",
+      "source": "Google",
+      "verified": true,
+      "helpful": 12
+    },
+    {
+      "id": 3,
+      "author": "Michael R.",
+      "rating": 5,
+      "date": "3 weeks ago",
+      "text": "After trying physical therapy elsewhere without results, I came to Camelback Medical Centers. The difference is night and day. Dr. Chen's approach to sports medicine helped me get back to running marathons. Professional, knowledgeable, and genuinely care about your recovery.",
+      "source": "Google",
+      "verified": true,
+      "helpful": 10
+    },
+    {
+      "id": 4,
+      "author": "Jennifer L.",
+      "rating": 5,
+      "date": "1 week ago",
+      "text": "Pregnancy back pain was unbearable until I found this clinic. Dr. James is so gentle and knowledgeable about prenatal chiropractic care. I feel so much better and can actually sleep now! The office is clean, modern, and the staff is wonderful. Thank you!",
+      "source": "Google",
+      "verified": true,
+      "helpful": 8
+    },
+    {
+      "id": 5,
+      "author": "David K.",
+      "rating": 5,
+      "date": "2 months ago",
+      "text": "Best decision I made for my health! Suffered from migraines for 10+ years. After working with the team here, my headaches have decreased by 90%. The integrated approach combining chiropractic and physical therapy really works. Worth every penny!",
+      "source": "Google",
+      "verified": true,
+      "helpful": 14
+    },
+    {
+      "id": 6,
+      "author": "Amanda T.",
+      "rating": 5,
+      "date": "4 days ago",
+      "text": "My teenage son was having terrible sports-related back pain. Dr. Chen worked with him on proper form and strengthening exercises. Not only is he pain-free, but his athletic performance improved! Great with kids and adults alike.",
+      "source": "Google",
+      "verified": true,
+      "helpful": 6
+    },
+    {
+      "id": 7,
+      "author": "Robert H.",
+      "rating": 5,
+      "date": "3 months ago",
+      "text": "I've been to several chiropractors in the Naperville area, and this is by far the best. Modern equipment, cutting-edge techniques, and they actually listen to your concerns. My chronic lower back pain from years of construction work is finally manageable.",
+      "source": "Google",
+      "verified": true,
+      "helpful": 11
+    },
+    {
+      "id": 8,
+      "author": "Lisa W.",
+      "rating": 5,
+      "date": "1 month ago",
+      "text": "Incredible experience from start to finish. The office is beautiful and welcoming. Dr. James explained everything clearly and created a personalized treatment plan. After 6 weeks, my neck pain and stiffness are completely gone. Can't recommend them enough!",
+      "source": "Google",
+      "verified": true,
+      "helpful": 9
+    }
+  ],
+  "reviewHighlights": [
+    {
+      "category": "Pain Relief",
+      "count": 127,
+      "percentage": 85
+    },
+    {
+      "category": "Professional Staff",
+      "count": 134,
+      "percentage": 89
+    },
+    {
+      "category": "Modern Facility",
+      "count": 98,
+      "percentage": 65
+    },
+    {
+      "category": "Great Value",
+      "count": 112,
+      "percentage": 75
+    },
+    {
+      "category": "Effective Treatment",
+      "count": 140,
+      "percentage": 93
+    }
+  ]
+}
