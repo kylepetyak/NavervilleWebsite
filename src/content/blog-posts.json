@@ -1,0 +1,129 @@
+{
+  "posts": [
+    {
+      "id": "back-pain-relief-naperville",
+      "title": "5 Natural Ways to Relieve Back Pain Without Medication in Naperville",
+      "slug": "back-pain-relief-naperville",
+      "excerpt": "Discover proven, drug-free methods to relieve back pain used by Naperville chiropractors. Learn exercises, stretches, and lifestyle changes that provide lasting relief.",
+      "content": "Full article content goes here...",
+      "author": {
+        "name": "Dr. James Nabzdyk",
+        "title": "Doctor of Chiropractic",
+        "image": "/images/team/dr-james.jpg"
+      },
+      "publishedDate": "2025-01-15",
+      "updatedDate": "2025-01-15",
+      "category": "Back Pain",
+      "tags": [
+        "back pain",
+        "pain relief",
+        "chiropractic",
+        "natural remedies",
+        "naperville"
+      ],
+      "featuredImage": {
+        "url": "/images/blog/back-pain-relief.jpg",
+        "alt": "Person experiencing back pain relief through chiropractic care in Naperville",
+        "width": 1200,
+        "height": 630
+      },
+      "seo": {
+        "metaTitle": "5 Natural Ways to Relieve Back Pain | Naperville Chiropractor",
+        "metaDescription": "Discover 5 proven, drug-free methods to relieve back pain from Naperville's trusted chiropractors. Get lasting relief without medication.",
+        "keywords": [
+          "back pain relief naperville",
+          "natural back pain treatment",
+          "chiropractor naperville",
+          "drug-free pain relief"
+        ],
+        "canonicalUrl": "https://camelbackmedical.com/blog/back-pain-relief-naperville"
+      },
+      "readTime": 8,
+      "featured": true,
+      "status": "published"
+    },
+    {
+      "id": "choosing-chiropractor-naperville",
+      "title": "How to Choose the Right Chiropractor in Naperville: Complete Guide",
+      "slug": "choosing-chiropractor-naperville",
+      "excerpt": "Finding the right chiropractor in Naperville is crucial for your health. Learn what questions to ask, credentials to verify, and red flags to avoid.",
+      "content": "Full article content goes here...",
+      "author": {
+        "name": "Dr. James Nabzdyk",
+        "title": "Doctor of Chiropractic",
+        "image": "/images/team/dr-james.jpg"
+      },
+      "publishedDate": "2025-01-10",
+      "updatedDate": "2025-01-10",
+      "category": "Patient Education",
+      "tags": [
+        "chiropractor",
+        "naperville",
+        "patient guide",
+        "choosing a doctor"
+      ],
+      "featuredImage": {
+        "url": "/images/blog/choosing-chiropractor.jpg",
+        "alt": "Chiropractor consultation in Naperville clinic",
+        "width": 1200,
+        "height": 630
+      },
+      "seo": {
+        "metaTitle": "How to Choose a Chiropractor in Naperville | Expert Guide",
+        "metaDescription": "Complete guide to choosing the right chiropractor in Naperville, IL. Learn what credentials to check, questions to ask, and how to find the best care.",
+        "keywords": [
+          "choose chiropractor naperville",
+          "best chiropractor naperville",
+          "find chiropractor",
+          "naperville chiropractic"
+        ],
+        "canonicalUrl": "https://camelbackmedical.com/blog/choosing-chiropractor-naperville"
+      },
+      "readTime": 10,
+      "featured": true,
+      "status": "published"
+    },
+    {
+      "id": "sports-injuries-recovery",
+      "title": "Faster Sports Injury Recovery: What Naperville Athletes Need to Know",
+      "slug": "sports-injuries-recovery",
+      "excerpt": "Learn how Naperville athletes are reducing recovery time and preventing re-injury with specialized chiropractic and physical therapy treatments.",
+      "content": "Full article content goes here...",
+      "author": {
+        "name": "Dr. Michael Chen",
+        "title": "Physical Medicine Specialist",
+        "image": "/images/team/dr-chen.jpg"
+      },
+      "publishedDate": "2025-01-05",
+      "updatedDate": "2025-01-05",
+      "category": "Sports Medicine",
+      "tags": [
+        "sports injuries",
+        "athletes",
+        "recovery",
+        "naperville",
+        "physical therapy"
+      ],
+      "featuredImage": {
+        "url": "/images/blog/sports-injury-recovery.jpg",
+        "alt": "Athlete receiving sports injury treatment in Naperville",
+        "width": 1200,
+        "height": 630
+      },
+      "seo": {
+        "metaTitle": "Sports Injury Recovery for Naperville Athletes | Expert Care",
+        "metaDescription": "Reduce recovery time and prevent re-injury with specialized sports medicine. Naperville's trusted team for athlete care and performance.",
+        "keywords": [
+          "sports injury naperville",
+          "athlete recovery",
+          "sports medicine naperville",
+          "injury prevention"
+        ],
+        "canonicalUrl": "https://camelbackmedical.com/blog/sports-injuries-recovery"
+      },
+      "readTime": 7,
+      "featured": false,
+      "status": "published"
+    }
+  ]
+}
