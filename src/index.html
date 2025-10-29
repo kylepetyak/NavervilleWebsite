@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Performance optimizations -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//images.unsplash.com" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    
+    <!-- Preconnect to critical resources -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    
+    <!-- Resource hints -->
+    <link rel="preload" href="/src/main.tsx" as="script" />
+    
+    <!-- PWA manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Favicon and touch icons -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+    
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="msapplication-TileColor" content="#2563eb" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    
+    <!-- Security headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self' data:;" />
+    
+    <!-- Basic SEO -->
+    <title>Camelback Medical Centers - Naperville | Chiropractic & Physical Therapy</title>
+    <meta name="description" content="Expert chiropractic care, physical therapy, and wellness services in Naperville, IL. $29 new patient special. Call (630) 416-1151 to schedule your appointment today." />
+    <meta name="keywords" content="chiropractor naperville, physical therapy naperville, medical center naperville, back pain treatment, neck pain relief" />
+    <meta name="author" content="Camelback Medical Centers" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Camelback Medical Centers - Naperville | Chiropractic & Physical Therapy" />
+    <meta property="og:description" content="Expert chiropractic care, physical therapy, and wellness services in Naperville, IL. $29 new patient special." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://camelbackmedical.com" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1200&h=630&fit=crop" />
+    <meta property="og:site_name" content="Camelback Medical Centers - Naperville" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Camelback Medical Centers - Naperville" />
+    <meta name="twitter:description" content="Expert chiropractic care, physical therapy, and wellness services in Naperville, IL." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1200&h=630&fit=crop" />
+    
+    <!-- Local business markup -->
+    <meta name="geo.region" content="US-IL" />
+    <meta name="geo.placename" content="Naperville, Illinois" />
+    <meta name="geo.position" content="41.7508;-88.1535" />
+    <meta name="ICBM" content="41.7508, -88.1535" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://camelbackmedical.com" />
+    
+    <!-- Critical CSS - inline for performance -->
+    <style>
+      /* Critical above-the-fold styles */
+      body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+      .min-h-screen { min-height: 100vh; }
+      .bg-white { background-color: #ffffff; }
+      .loading-spinner { 
+        width: 40px; height: 40px; 
+        border: 4px solid #f3f3f3; 
+        border-top: 4px solid #2563eb; 
+        border-radius: 50%; 
+        animation: spin 1s linear infinite; 
+        margin: 20px auto;
+      }
+      @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>This website requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
+        <p>For immediate assistance, please call us at <a href="tel:+16304161151">(630) 416-1151</a></p>
+      </div>
+    </noscript>
+    
+    <div id="root">
+      <!-- Loading fallback -->
+      <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #ffffff;">
+        <div style="text-align: center;">
+          <div class="loading-spinner"></div>
+          <p style="color: #666; margin-top: 20px;">Loading Camelback Medical Centers...</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main app script -->
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+    
+    <!-- Performance monitoring -->
+    <script>
+      // Monitor Core Web Vitals
+      function sendToAnalytics(metric) {
+        // Replace with your analytics implementation
+        console.log('Core Web Vitals:', metric);
+      }
+      
+      // Largest Contentful Paint
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          sendToAnalytics({
+            name: 'LCP',
+            value: entry.startTime,
+            id: entry.id,
+          });
+        }
+      }).observe({entryTypes: ['largest-contentful-paint']});
+      
+      // Cumulative Layout Shift
+      let clsValue = 0;
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          if (!entry.hadRecentInput) {
+            clsValue += entry.value;
+            sendToAnalytics({
+              name: 'CLS',
+              value: clsValue,
+              id: entry.id,
+            });
+          }
+        }
+      }).observe({entryTypes: ['layout-shift']});
+      
+      // First Input Delay
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          sendToAnalytics({
+            name: 'FID',
+            value: entry.processingStart - entry.startTime,
+            id: entry.id,
+          });
+        }
+      }).observe({entryTypes: ['first-input']});
+    </script>
+  </body>
+</html>

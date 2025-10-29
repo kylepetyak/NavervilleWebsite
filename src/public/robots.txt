@@ -1,0 +1,39 @@
+User-agent: *
+Allow: /
+
+# Optimize crawling
+Crawl-delay: 1
+
+# Important pages
+Allow: /
+Allow: /about
+Allow: /services/*
+Allow: /blog/*
+Allow: /conditions/*
+Allow: /who-we-serve/*
+Allow: /booking
+
+# Block admin and development files
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /components/
+Disallow: /hooks/
+
+# Block duplicate content
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+
+# Allow search engines to access CSS and JS
+Allow: /*.css$
+Allow: /*.js$
+
+# Sitemap location
+Sitemap: https://camelbackmedical.com/sitemap.xml
+
+# Additional sitemaps
+Sitemap: https://camelbackmedical.com/sitemap-blog.xml
+Sitemap: https://camelbackmedical.com/sitemap-services.xml
