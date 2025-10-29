@@ -51,11 +51,24 @@
       },
       "devDependencies": {
           "@types/node": "^20.10.0",
+          "@types/react": "^18.3.1",
+          "@types/react-dom": "^18.3.0",
           "@vitejs/plugin-react-swc": "^3.10.2",
+          "terser": "^5.36.0",
+          "typescript": "^5.6.3",
           "vite": "6.3.5"
       },
       "scripts": {
           "dev": "vite",
-          "build": "vite build"
+          "build": "vite build",
+          "preview": "vite preview",
+          "lint": "echo 'Linting not configured yet'",
+          "type-check": "tsc --noEmit",
+          "clean": "rm -rf dist",
+          "prebuild": "npm run clean"
+      },
+      "engines": {
+          "node": ">=18.0.0",
+          "npm": ">=9.0.0"
       }
   }

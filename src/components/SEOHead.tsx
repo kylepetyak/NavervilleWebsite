@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { generateLocalBusinessSchema, businessInfo } from '../config/localSEO';
 
 interface SEOHeadProps {
   title: string;
@@ -111,29 +112,25 @@ export function SEOHead({
     updateMetaTag('ICBM', '41.7508, -88.1535');
 
     // Schema.org structured data
+    let finalSchema;
     if (schemaData) {
-      let schemaScript = document.querySelector('#schema-data');
-      if (!schemaScript) {
-        schemaScript = document.createElement('script');
-        schemaScript.id = 'schema-data';
-        schemaScript.type = 'application/ld+json';
-        document.head.appendChild(schemaScript);
-      }
-      schemaScript.textContent = JSON.stringify(schemaData);
+      finalSchema = schemaData;
+    } else if (pageType === 'website') {
+      // Use comprehensive local business schema for website/homepage
+      finalSchema = generateLocalBusinessSchema();
+    } else {
+      // Use default schema for other page types
+      finalSchema = generateDefaultSchema(pageType, title, description, canonicalUrl);
     }
 
-    // Generate default schema based on page type
-    if (!schemaData) {
-      const defaultSchema = generateDefaultSchema(pageType, title, description, canonicalUrl);
-      let schemaScript = document.querySelector('#schema-data');
-      if (!schemaScript) {
-        schemaScript = document.createElement('script');
-        schemaScript.id = 'schema-data';
-        schemaScript.type = 'application/ld+json';
-        document.head.appendChild(schemaScript);
-      }
-      schemaScript.textContent = JSON.stringify(defaultSchema);
+    let schemaScript = document.querySelector('#schema-data');
+    if (!schemaScript) {
+      schemaScript = document.createElement('script');
+      schemaScript.id = 'schema-data';
+      schemaScript.type = 'application/ld+json';
+      document.head.appendChild(schemaScript);
     }
+    schemaScript.textContent = JSON.stringify(finalSchema);
 
   }, [title, description, keywords, canonicalUrl, ogImage, ogType, schemaData, pageType]);
 
