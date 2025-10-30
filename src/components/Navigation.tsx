@@ -87,7 +87,7 @@ export function Navigation({
                 <img
                   src="/logo.svg"
                   alt="Camelback Medical Centers - The Pain Relief Clinic"
-                  className="h-14 w-auto"
+                  className="h-12 w-auto"
                   onError={(e) => {
                     // Fallback to PNG if SVG doesn't exist
                     const img = e.target as HTMLImageElement;
