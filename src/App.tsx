@@ -63,6 +63,14 @@ export default function App() {
           canonicalUrl: 'https://camelbackmedical.com/services',
           pageType: 'service' as const
         };
+      case 'about':
+        return {
+          title: 'About Us - Camelback Medical Centers | Naperville IL Healthcare',
+          description: 'Learn about Camelback Medical Centers in Naperville, IL. Rooted in community values since serving the Naperville area. Expert chiropractic care, physical therapy, and wellness services for families, athletes, and seniors.',
+          keywords: 'about camelback medical naperville, naperville chiropractor, naperville medical center, healthcare naperville il, naperville wellness center, dr james nabzdyk, naperville riverwalk, local healthcare providers',
+          canonicalUrl: 'https://camelbackmedical.com/about',
+          pageType: 'about' as const
+        };
       default:
         return {
           title: 'Camelback Medical Centers - Naperville Healthcare',

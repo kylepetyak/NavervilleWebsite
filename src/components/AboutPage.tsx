@@ -38,7 +38,7 @@ export function AboutPage({ onNavigateToHome, onNavigateToConditions, onNavigate
         <div className="absolute inset-0 opacity-10">
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1730567482526-bba3346fa759?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYXBlcnZpbGxlJTIwcml2ZXJ3YWxrJTIwaWxsaW5vaXN8ZW58MXx8fHwxNzU2NDgwNjk2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Naperville Riverwalk"
+            alt="Naperville Riverwalk Illinois"
             className="w-full h-full object-cover"
           />
         </div>
@@ -46,10 +46,10 @@ export function AboutPage({ onNavigateToHome, onNavigateToConditions, onNavigate
           <div className="text-center space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                About Camelback Medical Centers – Naperville
+                About Camelback Medical Centers – Naperville, Illinois
               </h1>
               <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto">
-                Where health meets the heart of Naperville
+                Your trusted chiropractic and wellness center in the heart of Naperville, IL
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -71,18 +71,20 @@ export function AboutPage({ onNavigateToHome, onNavigateToConditions, onNavigate
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                Rooted in Naperville's Legacy
+                Rooted in Naperville, Illinois Legacy
               </h2>
               <div className="prose prose-lg text-gray-700">
                 <p>
-                  Founded in 1831 by Joseph Naper on the DuPage River, Naperville's blend of history, charm, 
-                  and growth inspires our approach. From the Riverwalk and Moser Tower's Millennium Carillon 
-                  to historic Naper Settlement, community and wellness are woven into Naperville's spirit.
+                  Founded in 1831 by Joseph Naper on the DuPage River, Naperville, IL's blend of history, charm,
+                  and growth inspires our approach to healthcare. From the iconic Riverwalk and Moser Tower's
+                  Millennium Carillon to the historic Naper Settlement, community and wellness are woven into
+                  Naperville's spirit.
                 </p>
                 <p>
-                  Just as Naperville has grown from a small settlement into a thriving community while 
-                  preserving its character, we believe in honoring traditional healing methods while 
-                  embracing modern medical advances.
+                  Just as Naperville has grown from a small settlement into one of Chicago's premier western
+                  suburbs while preserving its character, Camelback Medical Centers believes in honoring
+                  traditional chiropractic healing methods while embracing modern medical advances for
+                  Naperville families.
                 </p>
               </div>
             </div>
@@ -102,10 +104,10 @@ export function AboutPage({ onNavigateToHome, onNavigateToConditions, onNavigate
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-              Our Mission in Naperville
+              Our Mission Serving Naperville, IL
             </h2>
             <p className="text-lg text-gray-600 mt-4">
-              We're committed to being your trusted healthcare partner in the community
+              We're committed to being your trusted chiropractic and wellness partner in the Naperville community
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -166,41 +168,41 @@ export function AboutPage({ onNavigateToHome, onNavigateToConditions, onNavigate
             </div>
             <div className="order-1 lg:order-2 space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                Why Naperville Inspires Our Work
+                Why Naperville, Illinois Inspires Our Work
               </h2>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                   <p className="text-gray-700">
-                    <strong>Active Lifestyle:</strong> From the DuPage River Trail to Centennial Beach, 
-                    Naperville residents value staying active and healthy
+                    <strong>Active Lifestyle:</strong> From the DuPage River Trail to Centennial Beach and
+                    Knoch Knolls Park, Naperville, IL residents value staying active and healthy
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                   <p className="text-gray-700">
-                    <strong>Excellence in Education:</strong> Our top-rated schools reflect the community's 
-                    commitment to learning and growth—values we share in healthcare
+                    <strong>Excellence in Education:</strong> Naperville's top-rated schools (Districts 203 and 204)
+                    reflect the community's commitment to learning and growth—values we share in healthcare
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                   <p className="text-gray-700">
-                    <strong>Cultural Vitality:</strong> From the Naperville Municipal Band to the 
-                    Historic Downtown, this community celebrates wellness in all its forms
+                    <strong>Cultural Vitality:</strong> From the Naperville Municipal Band to Historic Downtown
+                    and DuPage County events, this community celebrates wellness in all its forms
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                   <p className="text-gray-700">
-                    <strong>Family-Oriented Values:</strong> Naperville's parks, festivals, and 
-                    community events show how much families matter here
+                    <strong>Family-Oriented Values:</strong> Naperville's parks (including Riverwalk),
+                    festivals like Ribfest, and community events show how much families matter here
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                   <p className="text-gray-700">
-                    <strong>Innovation & Tradition:</strong> Like Naperville itself, we blend 
+                    <strong>Innovation & Tradition:</strong> Like Naperville itself, our chiropractic center blends
                     cutting-edge medical technology with time-tested healing principles
                   </p>
                 </div>
@@ -218,10 +220,10 @@ export function AboutPage({ onNavigateToHome, onNavigateToConditions, onNavigate
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-              Meet the Providers Who Know Naperville
+              Meet Our Naperville Chiropractors & Healthcare Providers
             </h2>
             <p className="text-lg text-gray-600 mt-4">
-              Our team members aren't just healthcare professionals—they're your neighbors
+              Our team members aren't just healthcare professionals—they're your Naperville neighbors
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -280,32 +282,32 @@ export function AboutPage({ onNavigateToHome, onNavigateToConditions, onNavigate
       </section>
 
       {/* Secondary CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-blue-600 opacity-20"></div>
+      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4wNSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPjwvc3ZnPg==')] opacity-30"></div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight text-white drop-shadow-sm">
             Ready to start your health journey with a provider who knows your community?
           </h2>
-          <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl mb-8 text-white/95 max-w-3xl mx-auto font-medium">
             Experience healthcare that understands Naperville's unique lifestyle and values
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 shadow-lg">
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 shadow-lg font-semibold">
               Meet Our Team
             </Button>
-            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4">
+            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4 font-semibold">
               <Phone className="mr-2 h-5 w-5" />
               Schedule a Visit
             </Button>
           </div>
           <div className="mt-8 text-center space-y-4">
-            <div className="inline-flex items-center bg-orange-500 hover:bg-orange-600 transition-colors text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg transform hover:scale-105 transition-transform">
+            <div className="inline-flex items-center bg-orange-500 hover:bg-orange-600 transition-colors text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg transform hover:scale-105 transition-transform cursor-pointer">
               <span className="text-3xl mr-3 font-bold">$29</span>
               <span>New Patient Special - Save $396!</span>
             </div>
-            <div className="space-y-2">
-              <p className="font-semibold text-xl">Call Now: (630) 416-1151</p>
-              <p className="text-blue-100">Mon-Fri: 8AM-7PM | Sat: 9AM-2PM</p>
+            <div className="space-y-2 bg-blue-700/40 backdrop-blur-sm rounded-lg px-6 py-4 inline-block">
+              <p className="font-bold text-xl text-white">Call Now: (630) 416-1151</p>
+              <p className="text-white/90 font-medium">Mon-Fri: 8AM-7PM | Sat: 9AM-2PM</p>
             </div>
           </div>
         </div>
