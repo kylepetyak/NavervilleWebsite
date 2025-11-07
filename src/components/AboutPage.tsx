@@ -5,16 +5,17 @@ import { SpecialOfferBanner } from "./SpecialOfferBanner";
 import { ProviderModal } from "./ProviderModal";
 import { useState } from "react";
 import drJamesPhoto from 'figma:asset/9978c4b65e44e1ca2df1864c117d9581d170d50b.png';
-import { 
-  Phone, 
-  CheckCircle, 
-  Users, 
+import {
+  Phone,
+  CheckCircle,
+  Users,
   Heart,
   MapPin,
   Shield,
   Target,
   Award
 } from "lucide-react";
+import { siteConfig, getCityStateFull, getPhoneLink } from "../config/siteConfig";
 
 interface AboutPageProps {
   onNavigateToHome: () => void;
@@ -29,6 +30,22 @@ export function AboutPage({ onNavigateToHome, onNavigateToConditions, onNavigate
   const handleLearnMore = (provider) => {
     setSelectedProvider(provider);
     setIsModalOpen(true);
+  };
+
+  // Map icon names to components
+  const iconMap = {
+    Users,
+    Heart,
+    MapPin,
+    Shield,
+    Target,
+    Award,
+    Phone,
+    CheckCircle,
+  };
+
+  const getIcon = (iconName: string) => {
+    return iconMap[iconName as keyof typeof iconMap] || Users;
   };
 
   return (
@@ -46,10 +63,10 @@ export function AboutPage({ onNavigateToHome, onNavigateToConditions, onNavigate
           <div className="text-center space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                About Camelback Medical Centers – Naperville, Illinois
+                {siteConfig.pages.about.heroTitle}
               </h1>
               <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto">
-                Your trusted chiropractic and wellness center in the heart of Naperville, IL
+                {siteConfig.pages.about.heroSubtitle}
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -71,21 +88,12 @@ export function AboutPage({ onNavigateToHome, onNavigateToConditions, onNavigate
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                Rooted in Naperville, Illinois Legacy
+                {siteConfig.pages.about.rootedTitle}
               </h2>
               <div className="prose prose-lg text-gray-700">
-                <p>
-                  Founded in 1831 by Joseph Naper on the DuPage River, Naperville, IL's blend of history, charm,
-                  and growth inspires our approach to healthcare. From the iconic Riverwalk and Moser Tower's
-                  Millennium Carillon to the historic Naper Settlement, community and wellness are woven into
-                  Naperville's spirit.
-                </p>
-                <p>
-                  Just as Naperville has grown from a small settlement into one of Chicago's premier western
-                  suburbs while preserving its character, Camelback Medical Centers believes in honoring
-                  traditional chiropractic healing methods while embracing modern medical advances for
-                  Naperville families.
-                </p>
+                {siteConfig.pages.about.rootedContent.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
               </div>
             </div>
             <div className="relative">
@@ -104,53 +112,25 @@ export function AboutPage({ onNavigateToHome, onNavigateToConditions, onNavigate
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-              Our Mission Serving Naperville, IL
+              {siteConfig.pages.about.missionTitle}
             </h2>
             <p className="text-lg text-gray-600 mt-4">
-              We're committed to being your trusted chiropractic and wellness partner in the Naperville community
+              {siteConfig.pages.about.missionSubtitle}
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Users,
-                title: "Community-Centered Care",
-                description: "We understand Naperville families and their unique health needs"
-              },
-              {
-                icon: Heart,
-                title: "Whole-Person Healthcare",
-                description: "Treating the entire person, not just symptoms, for lasting wellness"
-              },
-              {
-                icon: MapPin,
-                title: "Accessible & Local",
-                description: "Convenient location with flexible scheduling for busy Naperville lives"
-              },
-              {
-                icon: Shield,
-                title: "Evidence-Driven",
-                description: "Combining proven medical practices with innovative treatment approaches"
-              },
-              {
-                icon: Target,
-                title: "Person-First Approach",
-                description: "Every treatment plan is customized to your individual goals and lifestyle"
-              },
-              {
-                icon: Award,
-                title: "Your Wellness Partner",
-                description: "Supporting your health journey from acute care to long-term wellness"
-              }
-            ].map((mission, index) => (
-              <div key={index} className="text-center p-6 bg-white rounded-lg shadow-sm">
-                <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <mission.icon className="h-8 w-8 text-blue-600" />
+            {siteConfig.mission.map((mission, index) => {
+              const IconComponent = getIcon(mission.icon);
+              return (
+                <div key={index} className="text-center p-6 bg-white rounded-lg shadow-sm">
+                  <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <IconComponent className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-3">{mission.title}</h3>
+                  <p className="text-gray-600 text-sm">{mission.description}</p>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-3">{mission.title}</h3>
-                <p className="text-gray-600 text-sm">{mission.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -168,44 +148,17 @@ export function AboutPage({ onNavigateToHome, onNavigateToConditions, onNavigate
             </div>
             <div className="order-1 lg:order-2 space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                Why Naperville, Illinois Inspires Our Work
+                {siteConfig.pages.about.whyLocationTitle}
               </h2>
               <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700">
-                    <strong>Active Lifestyle:</strong> From the DuPage River Trail to Centennial Beach and
-                    Knoch Knolls Park, Naperville, IL residents value staying active and healthy
-                  </p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700">
-                    <strong>Excellence in Education:</strong> Naperville's top-rated schools (Districts 203 and 204)
-                    reflect the community's commitment to learning and growth—values we share in healthcare
-                  </p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700">
-                    <strong>Cultural Vitality:</strong> From the Naperville Municipal Band to Historic Downtown
-                    and DuPage County events, this community celebrates wellness in all its forms
-                  </p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700">
-                    <strong>Family-Oriented Values:</strong> Naperville's parks (including Riverwalk),
-                    festivals like Ribfest, and community events show how much families matter here
-                  </p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700">
-                    <strong>Innovation & Tradition:</strong> Like Naperville itself, our chiropractic center blends
-                    cutting-edge medical technology with time-tested healing principles
-                  </p>
-                </div>
+                {siteConfig.pages.about.whyLocationPoints.map((point, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
+                    <p className="text-gray-700">
+                      <strong>{point.title}:</strong> {point.description}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -220,63 +173,49 @@ export function AboutPage({ onNavigateToHome, onNavigateToConditions, onNavigate
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-              Meet Our Naperville Chiropractors & Healthcare Providers
+              {siteConfig.pages.about.teamTitle}
             </h2>
             <p className="text-lg text-gray-600 mt-4">
-              Our team members aren't just healthcare professionals—they're your Naperville neighbors
+              {siteConfig.pages.about.teamSubtitle}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Dr. James Nabzdyk DC",
-                title: "Doctor of Chiropractic",
-                image: drJamesPhoto,
-                connection: "Over 30 years serving the community, passionate about educating families on wellness"
-              },
-              {
-                name: "Dr. Michael Chen",
-                title: "Physical Medicine Specialist",
-                image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                connection: "Grew up in Naperville, North High School alumnus"
-              },
-              {
-                name: "Lisa Rodriguez, PT",
-                title: "Lead Physical Therapist",
-                image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                connection: "Volunteers at Naperville youth sports leagues"
-              }
-            ].map((provider, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
-                <CardContent>
-                  <div className="mb-6">
-                    {typeof provider.image === 'string' ? (
-                      <ImageWithFallback
-                        src={provider.image}
-                        alt={provider.name}
-                        className="w-32 h-32 rounded-full mx-auto object-cover"
-                      />
-                    ) : (
-                      <img
-                        src={provider.image}
-                        alt={provider.name}
-                        className="w-32 h-32 rounded-full mx-auto object-cover"
-                      />
-                    )}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{provider.name}</h3>
-                  <p className="text-blue-600 mb-3">{provider.title}</p>
-                  <p className="text-sm text-gray-600 mb-4 italic">{provider.connection}</p>
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    onClick={() => handleLearnMore(provider)}
-                  >
-                    Learn More
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+            {siteConfig.team.map((provider, index) => {
+              // Get the image - use imported drJamesPhoto if imageKey matches
+              const providerImage = provider.imageKey === 'drJamesPhoto' ? drJamesPhoto : provider.imageUrl;
+
+              return (
+                <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
+                  <CardContent>
+                    <div className="mb-6">
+                      {typeof providerImage === 'string' ? (
+                        <ImageWithFallback
+                          src={providerImage}
+                          alt={provider.name}
+                          className="w-32 h-32 rounded-full mx-auto object-cover"
+                        />
+                      ) : (
+                        <img
+                          src={providerImage}
+                          alt={provider.name}
+                          className="w-32 h-32 rounded-full mx-auto object-cover"
+                        />
+                      )}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{provider.name}</h3>
+                    <p className="text-blue-600 mb-3">{provider.title}</p>
+                    <p className="text-sm text-gray-600 mb-4 italic">{provider.localConnection}</p>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handleLearnMore(provider)}
+                    >
+                      Learn More
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -302,12 +241,14 @@ export function AboutPage({ onNavigateToHome, onNavigateToConditions, onNavigate
           </div>
           <div className="mt-8 text-center space-y-4">
             <div className="inline-flex items-center bg-orange-500 hover:bg-orange-600 transition-colors text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg transform hover:scale-105 transition-transform cursor-pointer">
-              <span className="text-3xl mr-3 font-bold">$29</span>
-              <span>New Patient Special - Save $396!</span>
+              <span className="text-3xl mr-3 font-bold">${siteConfig.offers.newPatientSpecial.price}</span>
+              <span>{siteConfig.offers.newPatientSpecial.description} - Save ${siteConfig.offers.newPatientSpecial.savings}!</span>
             </div>
             <div className="space-y-2 bg-blue-700/40 backdrop-blur-sm rounded-lg px-6 py-4 inline-block">
-              <p className="font-bold text-xl text-white">Call Now: (630) 416-1151</p>
-              <p className="text-white/90 font-medium">Mon-Fri: 8AM-7PM | Sat: 9AM-2PM</p>
+              <p className="font-bold text-xl text-white">
+                Call Now: <a href={getPhoneLink()} className="hover:underline">{siteConfig.contact.phone}</a>
+              </p>
+              <p className="text-white/90 font-medium">{siteConfig.contact.hours.display}</p>
             </div>
           </div>
         </div>

@@ -1,71 +1,59 @@
 /**
- * Local SEO Configuration for Camelback Medical Centers - Naperville
- * This file contains all the local business information for SEO optimization
+ * Local SEO Configuration
+ * This file uses the siteConfig to generate SEO-optimized business information
  */
 
+import { siteConfig, getFullAddress, getBusinessNameWithLocation } from './siteConfig';
+
 export const businessInfo = {
-  name: "Camelback Medical Centers - Naperville",
-  legalName: "Camelback Medical Centers LLC",
-  description: "Expert chiropractic care, physical therapy, and wellness services in Naperville, IL. Serving families, athletes, and individuals seeking natural pain relief and optimal health.",
+  name: getBusinessNameWithLocation(),
+  legalName: siteConfig.business.legalName,
+  description: `Expert chiropractic care, physical therapy, and wellness services in ${siteConfig.location.city}, ${siteConfig.location.stateAbbrev}. Serving families, athletes, and individuals seeking natural pain relief and optimal health.`,
 
   // Contact Information
-  phone: "(630) 416-1151",
-  phoneFormatted: "+16304161151",
-  email: "info@camelbackmedical.com",
+  phone: siteConfig.contact.phone,
+  phoneFormatted: `+1${siteConfig.contact.phoneRaw}`,
+  email: siteConfig.contact.email,
 
   // Address Information
   address: {
-    streetAddress: "123 Main Street", // UPDATE WITH ACTUAL ADDRESS
-    addressLocality: "Naperville",
-    addressRegion: "IL",
-    postalCode: "60540",
-    addressCountry: "US"
+    streetAddress: siteConfig.location.address.street,
+    addressLocality: siteConfig.location.address.city,
+    addressRegion: siteConfig.location.address.state,
+    postalCode: siteConfig.location.address.zip,
+    addressCountry: siteConfig.location.address.country === "United States" ? "US" : siteConfig.location.address.country
   },
 
-  // Geographic Coordinates for Naperville
+  // Geographic Coordinates
   geo: {
-    latitude: "41.7508",
-    longitude: "-88.1535"
+    latitude: siteConfig.location.coordinates.latitude,
+    longitude: siteConfig.location.coordinates.longitude
   },
 
-  // Service Area
+  // Service Area (customize based on your location)
   serviceArea: [
-    "Naperville, IL",
+    `${siteConfig.location.city}, ${siteConfig.location.stateAbbrev}`,
+    `${siteConfig.location.county}`,
     "Aurora, IL",
     "Wheaton, IL",
     "Lisle, IL",
     "Bolingbrook, IL",
     "Downers Grove, IL",
-    "DuPage County, IL",
     "Will County, IL"
   ],
 
-  // Business Hours
+  // Business Hours (converted to schema.org format)
   openingHours: [
-    "Mo-Fr 08:00-18:00",
+    "Mo-Fr 08:00-19:00",
     "Sa 09:00-14:00"
   ],
-  openingHoursDetailed: {
-    monday: "8:00 AM - 6:00 PM",
-    tuesday: "8:00 AM - 6:00 PM",
-    wednesday: "8:00 AM - 6:00 PM",
-    thursday: "8:00 AM - 6:00 PM",
-    friday: "8:00 AM - 6:00 PM",
-    saturday: "9:00 AM - 2:00 PM",
-    sunday: "Closed"
-  },
+  openingHoursDetailed: siteConfig.contact.hours.detailed,
 
   // Website & Social Media
-  url: "https://camelbackmedical.com",
-  logo: "https://camelbackmedical.com/logo.png",
-  image: "https://camelbackmedical.com/og-image.jpg",
-
-  socialMedia: {
-    facebook: "https://www.facebook.com/camelbackmedical",
-    instagram: "https://www.instagram.com/camelbackmedical",
-    linkedin: "https://www.linkedin.com/company/camelbackmedical",
-    youtube: "https://www.youtube.com/@camelbackmedical"
-  },
+  url: siteConfig.web.url,
+  logo: `${siteConfig.web.url}${siteConfig.branding.logo.png}`,
+  image: `${siteConfig.web.url}/og-image.jpg`,
+  socialMedia: siteConfig.web.social,
 
   // Medical Specialties
   medicalSpecialties: [
@@ -116,10 +104,10 @@ export const businessInfo = {
 
   // Special Offers
   specialOffer: {
-    name: "New Patient Special",
-    price: "$29",
-    regularPrice: "$425",
-    description: "Consultation + Examination + X-Rays"
+    name: siteConfig.offers.newPatientSpecial.description,
+    price: `$${siteConfig.offers.newPatientSpecial.price}`,
+    regularPrice: `$${siteConfig.offers.newPatientSpecial.originalPrice}`,
+    description: siteConfig.offers.newPatientSpecial.includes.join(", ")
   }
 };
 
@@ -232,7 +220,7 @@ export function generateLocalBusinessSchema() {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "opens": "08:00",
-            "closes": "18:00"
+            "closes": "19:00"
           },
           {
             "@type": "OpeningHoursSpecification",
@@ -298,33 +286,14 @@ export function generateBreadcrumbSchema(breadcrumbs: Array<{ name: string; url:
 }
 
 /**
- * Local SEO Keywords for Naperville
+ * Local SEO Keywords (dynamically generated from siteConfig)
  */
 export const localSEOKeywords = {
-  primary: [
-    "chiropractor naperville",
-    "chiropractor naperville il",
-    "naperville chiropractor",
-    "physical therapy naperville",
-    "naperville physical therapy",
-    "back pain naperville",
-    "neck pain treatment naperville"
-  ],
-  secondary: [
-    "chiropractor near me naperville",
-    "best chiropractor naperville",
-    "sports injury naperville",
-    "car accident injury naperville",
-    "sciatica treatment naperville",
-    "spinal decompression naperville",
-    "massage therapy naperville",
-    "acupuncture naperville"
-  ],
+  primary: siteConfig.seo.primaryKeywords,
+  secondary: siteConfig.seo.secondaryKeywords,
   neighborhood: [
-    "downtown naperville chiropractor",
-    "naperville riverwalk area chiropractor",
-    "95th street naperville chiropractor",
-    "aurora naperville chiropractor",
-    "wheaton naperville chiropractor"
+    `downtown ${siteConfig.location.city.toLowerCase()} chiropractor`,
+    `${siteConfig.localLandmarks.famous[0].name.toLowerCase()} area chiropractor`,
+    `${siteConfig.location.county.toLowerCase()} chiropractor`,
   ]
 };
