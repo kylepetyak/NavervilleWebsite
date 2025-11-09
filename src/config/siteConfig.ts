@@ -1,69 +1,66 @@
 /**
  * Site Configuration Template
  *
- * This file contains all customizable content for the website.
- * To create a site for a different location:
- * 1. Copy this file
- * 2. Update all values below
- * 3. Replace imports throughout the codebase
+ * This is a TEMPLATE configuration file with placeholder content.
+ * Replace ALL values below with your actual business information.
  *
- * All hardcoded content has been moved here for easy customization.
+ * For detailed instructions, see TEMPLATE_CUSTOMIZATION_GUIDE.md
  */
 
 export const siteConfig = {
   // Business Information
   business: {
-    name: "Camelback Medical Centers",
-    tagline: "The Pain Relief Clinic",
-    legalName: "Camelback Medical Centers - Naperville",
-    shortName: "CMC Naperville",
+    name: "Your Medical Center Name",
+    tagline: "Your Tagline Here",
+    legalName: "Your Medical Center Name LLC",
+    shortName: "Your Business",
     type: "Medical Clinic", // Medical Clinic, Chiropractic Office, Physical Therapy Center, etc.
   },
 
   // Location Information
   location: {
-    city: "Naperville",
-    state: "Illinois",
-    stateAbbrev: "IL",
-    county: "DuPage County",
-    region: "Chicago's premier western suburbs", // Optional regional context
+    city: "Your City",
+    state: "Your State",
+    stateAbbrev: "YS",
+    county: "Your County",
+    region: "Your region description", // Optional: e.g., "Greater Metropolitan Area"
 
     // Full address
     address: {
       street: "123 Main Street",
-      city: "Naperville",
-      state: "IL",
-      zip: "60540",
+      city: "Your City",
+      state: "YS",
+      zip: "12345",
       country: "United States",
     },
 
-    // Geographic coordinates
+    // Geographic coordinates (Get from Google Maps)
     coordinates: {
-      latitude: "41.7508",
-      longitude: "-88.1535",
+      latitude: "00.0000",
+      longitude: "-00.0000",
     },
 
-    // Founded year (optional)
-    cityFounded: "1831",
-    cityFounder: "Joseph Naper",
+    // City history (optional)
+    cityFounded: "1800",
+    cityFounder: "City Founder Name",
   },
 
   // Contact Information
   contact: {
-    phone: "(630) 416-1151",
-    phoneRaw: "6304161151", // For tel: links
-    email: "info@camelbackmedical.com",
-    fax: "(630) 416-1152",
+    phone: "(555) 123-4567",
+    phoneRaw: "5551234567", // Same number without formatting
+    email: "info@yourbusiness.com",
+    fax: "(555) 123-4568",
 
     // Hours of operation
     hours: {
-      display: "Mon-Fri: 8AM-7PM | Sat: 9AM-2PM",
+      display: "Mon-Fri: 8AM-6PM | Sat: 9AM-2PM",
       detailed: {
-        monday: "8:00 AM - 7:00 PM",
-        tuesday: "8:00 AM - 7:00 PM",
-        wednesday: "8:00 AM - 7:00 PM",
-        thursday: "8:00 AM - 7:00 PM",
-        friday: "8:00 AM - 7:00 PM",
+        monday: "8:00 AM - 6:00 PM",
+        tuesday: "8:00 AM - 6:00 PM",
+        wednesday: "8:00 AM - 6:00 PM",
+        thursday: "8:00 AM - 6:00 PM",
+        friday: "8:00 AM - 6:00 PM",
         saturday: "9:00 AM - 2:00 PM",
         sunday: "Closed",
       },
@@ -72,20 +69,20 @@ export const siteConfig = {
 
   // Website & Social Media
   web: {
-    domain: "camelbackmedical.com",
-    url: "https://camelbackmedical.com",
+    domain: "yourbusiness.com",
+    url: "https://yourbusiness.com",
 
     social: {
-      facebook: "https://facebook.com/camelbackmedical",
-      instagram: "https://instagram.com/camelbackmedical",
-      twitter: "https://twitter.com/camelbackmedical",
-      linkedin: "https://linkedin.com/company/camelbackmedical",
-      youtube: "https://youtube.com/@camelbackmedical",
+      facebook: "https://facebook.com/yourbusiness",
+      instagram: "https://instagram.com/yourbusiness",
+      twitter: "https://twitter.com/yourbusiness",
+      linkedin: "https://linkedin.com/company/yourbusiness",
+      youtube: "https://youtube.com/@yourbusiness",
     },
 
-    // Google Business
-    googleReviewLink: "https://share.google/SfA3o8kkHjJZxGWuW",
-    googlePlaceId: "", // Add your Google Place ID here
+    // Google Business Profile
+    googleReviewLink: "https://g.page/r/YOUR_REVIEW_LINK",
+    googlePlaceId: "YOUR_GOOGLE_PLACE_ID", // Optional
   },
 
   // Branding & Design
@@ -121,178 +118,170 @@ export const siteConfig = {
   // Team Members
   team: [
     {
-      id: "dr-james",
-      name: "Dr. James Nabzdyk DC",
+      id: "provider-1",
+      name: "Dr. First Last",
       title: "Doctor of Chiropractic",
       credentials: "DC",
-      bio: "Over 30 years serving the community, passionate about educating families on wellness",
-      specialties: ["Chiropractic Care", "Wellness", "Pain Management"],
-      education: [],
-      imageKey: "drJamesPhoto", // References imported image
-      localConnection: "Over 30 years serving the community, passionate about educating families on wellness",
-    },
-    {
-      id: "dr-chen",
-      name: "Dr. Michael Chen",
-      title: "Physical Medicine Specialist",
-      credentials: "MD",
-      bio: "Grew up in Naperville, North High School alumnus",
-      specialties: ["Physical Medicine", "Sports Medicine"],
+      bio: "Your provider bio and experience here",
+      specialties: ["Chiropractic Care", "Pain Management", "Wellness"],
       education: [],
       imageUrl: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      localConnection: "Grew up in Naperville, North High School alumnus",
+      localConnection: "Local connection or community involvement",
     },
     {
-      id: "lisa-rodriguez",
-      name: "Lisa Rodriguez, PT",
-      title: "Lead Physical Therapist",
+      id: "provider-2",
+      name: "Dr. Second Name",
+      title: "Physical Therapist",
       credentials: "PT, DPT",
-      bio: "Volunteers at Naperville youth sports leagues",
+      bio: "Your provider bio and experience here",
       specialties: ["Physical Therapy", "Sports Rehabilitation"],
       education: [],
       imageUrl: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      localConnection: "Volunteers at Naperville youth sports leagues",
+      localConnection: "Local connection or community involvement",
+    },
+    {
+      id: "provider-3",
+      name: "Third Provider Name",
+      title: "Sports Medicine Specialist",
+      credentials: "MD",
+      bio: "Your provider bio and experience here",
+      specialties: ["Sports Medicine", "Injury Prevention"],
+      education: [],
+      imageUrl: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      localConnection: "Local connection or community involvement",
     },
   ],
 
-  // Local Landmarks & References (for location-specific content)
+  // Local Landmarks & References (CUSTOMIZE FOR YOUR CITY!)
   localLandmarks: {
     famous: [
       {
-        name: "Naperville Riverwalk",
-        description: "scenic walking path along the DuPage River",
+        name: "City Park Name",
+        description: "popular park or outdoor space",
         category: "outdoor",
       },
       {
-        name: "Moser Tower's Millennium Carillon",
-        description: "iconic bell tower",
-        category: "landmark",
-      },
-      {
-        name: "Naper Settlement",
-        description: "historic outdoor museum",
+        name: "Historic Downtown",
+        description: "historic downtown area",
         category: "cultural",
       },
       {
-        name: "Centennial Beach",
-        description: "popular swimming spot",
-        category: "recreation",
-      },
-      {
-        name: "DuPage River Trail",
-        description: "extensive biking and walking trail",
+        name: "Local Trail Name",
+        description: "walking or biking trail",
         category: "outdoor",
       },
       {
-        name: "Knoch Knolls Park",
-        description: "community park with activities",
+        name: "Community Center",
+        description: "local community gathering place",
         category: "recreation",
+      },
+      {
+        name: "Famous Landmark",
+        description: "well-known local landmark",
+        category: "landmark",
+      },
+      {
+        name: "Recreation Area",
+        description: "popular recreation destination",
+        category: "outdoor",
       },
     ],
 
     schools: [
       {
-        name: "Naperville Community Unit School District 203",
-        shortName: "District 203",
-      },
-      {
-        name: "Indian Prairie Community Unit School District 204",
-        shortName: "District 204",
+        name: "School District Name",
+        shortName: "District #",
       },
     ],
 
     events: [
       {
-        name: "Ribfest",
-        description: "annual summer festival",
+        name: "Annual Festival",
+        description: "annual community festival",
       },
       {
-        name: "Naperville Municipal Band",
-        description: "community music performances",
-      },
-      {
-        name: "Last Fling",
-        description: "Labor Day festival",
+        name: "Community Event",
+        description: "popular local event",
       },
     ],
 
-    downtown: "Historic Downtown Naperville",
+    downtown: "Downtown Area Name",
   },
 
-  // SEO Keywords (location-specific)
+  // SEO Keywords (CUSTOMIZE FOR YOUR LOCATION!)
   seo: {
     primaryKeywords: [
-      "naperville chiropractor",
-      "chiropractor naperville il",
-      "naperville medical center",
-      "physical therapy naperville",
-      "back pain treatment naperville",
-      "naperville wellness center",
+      "chiropractor yourcity",
+      "chiropractor yourcity state",
+      "yourcity medical center",
+      "physical therapy yourcity",
+      "back pain treatment yourcity",
+      "yourcity wellness center",
     ],
 
     secondaryKeywords: [
-      "naperville healthcare",
-      "dupage county chiropractor",
-      "naperville pain relief",
-      "sports injury naperville",
-      "naperville physical therapy",
+      "yourcity healthcare",
+      "yourcounty chiropractor",
+      "yourcity pain relief",
+      "sports injury yourcity",
+      "yourcity physical therapy",
     ],
 
     localModifiers: [
       "near me",
-      "naperville il",
-      "in naperville",
-      "naperville illinois",
-      "dupage county",
+      "yourcity st",
+      "in yourcity",
+      "yourcity state",
+      "yourcounty",
     ],
   },
 
   // Page-specific content
   pages: {
     home: {
-      heroTitle: "Expert Pain Relief & Wellness Care in Naperville, IL",
-      heroSubtitle: "Your trusted partner for chiropractic care, physical therapy, and holistic wellness in the heart of Naperville",
+      heroTitle: "Expert Pain Relief & Wellness Care in Your City",
+      heroSubtitle: "Your trusted partner for chiropractic care, physical therapy, and holistic wellness",
     },
 
     about: {
-      heroTitle: "About Camelback Medical Centers – Naperville, Illinois",
-      heroSubtitle: "Your trusted chiropractic and wellness center in the heart of Naperville, IL",
+      heroTitle: "About Your Business – Your City, State",
+      heroSubtitle: "Your trusted healthcare center serving the local community",
 
-      missionTitle: "Our Mission Serving Naperville, IL",
-      missionSubtitle: "We're committed to being your trusted chiropractic and wellness partner in the Naperville community",
+      missionTitle: "Our Mission Serving Your Community",
+      missionSubtitle: "We're committed to being your trusted healthcare partner in the community",
 
-      rootedTitle: "Rooted in Naperville, Illinois Legacy",
+      rootedTitle: "Rooted in Your Community",
       rootedContent: [
-        `Founded in 1831 by Joseph Naper on the DuPage River, Naperville, IL's blend of history, charm, and growth inspires our approach to healthcare. From the iconic Riverwalk and Moser Tower's Millennium Carillon to the historic Naper Settlement, community and wellness are woven into Naperville's spirit.`,
-        `Just as Naperville has grown from a small settlement into one of Chicago's premier western suburbs while preserving its character, Camelback Medical Centers believes in honoring traditional chiropractic healing methods while embracing modern medical advances for Naperville families.`,
+        `Your city has a rich history and vibrant community spirit that inspires our approach to healthcare. We believe in combining the best of traditional healing methods with modern medical advances to serve local families.`,
+        `Just as your community has grown and evolved while maintaining its unique character, we honor time-tested healing practices while embracing innovative treatment approaches. Our team is dedicated to providing personalized care that fits your lifestyle and goals.`,
       ],
 
-      whyLocationTitle: "Why Naperville, Illinois Inspires Our Work",
+      whyLocationTitle: "Why Your Community Inspires Our Work",
       whyLocationPoints: [
         {
-          title: "Active Lifestyle",
-          description: "From the DuPage River Trail to Centennial Beach and Knoch Knolls Park, Naperville, IL residents value staying active and healthy",
+          title: "Active Community",
+          description: "Your community values health, wellness, and staying active through local parks, trails, and recreational facilities",
         },
         {
-          title: "Excellence in Education",
-          description: "Naperville's top-rated schools (Districts 203 and 204) reflect the community's commitment to learning and growth—values we share in healthcare",
+          title: "Family Values",
+          description: "Local families prioritize health and wellness, seeking quality care close to home",
         },
         {
           title: "Cultural Vitality",
-          description: "From the Naperville Municipal Band to Historic Downtown and DuPage County events, this community celebrates wellness in all its forms",
+          description: "Your community celebrates wellness through events, activities, and a commitment to healthy living",
         },
         {
-          title: "Family-Oriented Values",
-          description: "Naperville's parks (including Riverwalk), festivals like Ribfest, and community events show how much families matter here",
+          title: "Growing Together",
+          description: "We're proud to be part of this thriving community and support residents' health journeys",
         },
         {
-          title: "Innovation & Tradition",
-          description: "Like Naperville itself, our chiropractic center blends cutting-edge medical technology with time-tested healing principles",
+          title: "Accessible Care",
+          description: "Convenient location with flexible scheduling for busy lives in your area",
         },
       ],
 
-      teamTitle: "Meet Our Naperville Chiropractors & Healthcare Providers",
-      teamSubtitle: "Our team members aren't just healthcare professionals—they're your Naperville neighbors",
+      teamTitle: "Meet Our Healthcare Providers",
+      teamSubtitle: "Our team members aren't just healthcare professionals—they're your neighbors",
     },
   },
 
@@ -301,7 +290,7 @@ export const siteConfig = {
     {
       icon: "Users",
       title: "Community-Centered Care",
-      description: "We understand Naperville families and their unique health needs",
+      description: "We understand local families and their unique health needs",
     },
     {
       icon: "Heart",
@@ -311,7 +300,7 @@ export const siteConfig = {
     {
       icon: "MapPin",
       title: "Accessible & Local",
-      description: "Convenient location with flexible scheduling for busy Naperville lives",
+      description: "Convenient location with flexible scheduling for busy lives",
     },
     {
       icon: "Shield",
